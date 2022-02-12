@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { ActivityIndicator, Dimensions, FlatList, ScrollView, Text, View } from 'react-native';
+import { ActivityIndicator, Dimensions, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
 import ImageColors from 'react-native-image-colors';
@@ -40,7 +40,7 @@ export const HomeScreen = () => {
   if ( isLoading ) {
     return(
       <View style={{flex: 1, justifyContent: 'center', alignContent:'center'}}>
-        <ActivityIndicator color='orange' size={80} />
+        <ActivityIndicator color='orange' size={100} />
       </View>
     )
   }
@@ -64,7 +64,7 @@ export const HomeScreen = () => {
             {/* peliculas categorias */}
             {/* signo de exclamacion para decirle a typeScript que estoy  seguro de lo que estoy mandando */}
             <HorizontalSlider title='Popular' movies={ popular } />
-            <HorizontalSlider title='TopRated' movies={ topRated } />
+            <HorizontalSlider title='Top Rated' movies={ topRated } />
             <HorizontalSlider title='Upcoming' movies={ upcoming } />
 
         </View>

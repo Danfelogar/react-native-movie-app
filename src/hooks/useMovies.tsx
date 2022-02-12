@@ -50,7 +50,7 @@ export const useMovies = () => {
     }, []);
 
     return{
-        //con esto tendremos las propiedades mas facilmente...supuestamente es uan desestructuracion
+        //con esto tendremos las propiedades mas facilmente...supuestamente es una desestructuracion
         ...moviesState,
         isLoading
     }

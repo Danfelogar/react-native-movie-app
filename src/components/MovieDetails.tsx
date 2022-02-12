@@ -54,7 +54,7 @@ export const MovieDetails = ({ movieFull, cast }: Props) => {
             <FlatList
                 data={ cast }
                 //porque no me pide un num sino string
-                keyExtractor={ (item) => item.id.toString() }
+                keyExtractor={ (item, idx) => item.id.toString() + idx }
                 renderItem={ ({ item }) => <CastItem actor={ item } /> }
                 horizontal={ true }
                 showsHorizontalScrollIndicator={ false }

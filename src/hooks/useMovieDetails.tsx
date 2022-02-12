@@ -17,8 +17,6 @@ export const useMovieDetails = ( movieId: number ) => {
         cast: [],
     });
 
-    const { isLoading, cast, movieFull } = state;
-
     const getMovieDetails = async() =>{
         const movieDetailsPromise = await movieDB.get<MovieFull>(`/${ movieId }`);
         const castPromise = await movieDB.get<CreditsResponse>(`/${ movieId }/credits`);
@@ -38,9 +36,6 @@ export const useMovieDetails = ( movieId: number ) => {
     }, []);
 
     return{
-        state,
-        isLoading,
-        cast,
-        movieFull,
+        ...state,
     }
 };

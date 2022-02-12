@@ -1,5 +1,5 @@
-import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
+import { StackScreenProps } from '@react-navigation/stack';
 import { Image, StyleSheet, Text, View, Dimensions, ScrollView, ActivityIndicator, TouchableOpacity } from 'react-native';
 import { RootStackParams } from '../navigation/Navigation';
 import { useMovieDetails } from '../hooks/useMovieDetails';
@@ -39,19 +39,20 @@ export const DetailScreen = ( { route, navigation }: Props ) => {
 
         {
           isLoading
-            ? <ActivityIndicator size={ 30 } color="grey" style={{ marginTop: 20 }} />
+            ? <ActivityIndicator size={ 35 } color="grey" style={{ marginTop: 20 }} />
             : <MovieDetails movieFull={ movieFull! }  cast={ cast } />
         }
 
         {/* Boton para cerrar  */}
-
-        <TouchableOpacity onPress={() => navigation.pop()} style={ styles.backButton }>
-          <Icon
-          color='white'
-          name='arrow-back-outline'
-          size={ 60 }
-          />
-        </TouchableOpacity>
+        <View style={ styles.backButton }>
+          <TouchableOpacity onPress={() => navigation.pop()} >
+            <Icon
+            color='white'
+            name='arrow-back-outline'
+            size={ 60 }
+            />
+          </TouchableOpacity>
+        </View>
 
 
     </ScrollView>

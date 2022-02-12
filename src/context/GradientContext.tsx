@@ -22,7 +22,7 @@ export const GradientProvider = ({ children }: any) => {
         secondary: 'transparent',
     });
 
-    const [prevColors, sePrevtColors] = useState<ImageColors>({
+    const [prevColors, setPrevColors] = useState<ImageColors>({
         primary: 'transparent',
         secondary: 'transparent',
     });
@@ -32,7 +32,7 @@ export const GradientProvider = ({ children }: any) => {
     }
 
     const setPrevMainColors = ( colors: ImageColors ) => {
-        setColors( colors );
+        setPrevColors( colors );
     }
 
     return(
